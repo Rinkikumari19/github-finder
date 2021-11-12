@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React,{useMemo} from 'react';
+import Github_data from './components/Github_data';
+import Navbar_com from './components/Navbar_com';
+import Functinal_comp from './components/Functional_comp';
+import Class_comp from './components/Class_comp';
 
 function App() {
+  const MemoComp = useMemo(()=>{
+    return <Github_data />
+  },[])
+// console.log(MemoComp,"meo")
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar_com />
+      {MemoComp}
+      {/* <Functinal_comp />
+      <Class_comp /> */}
     </div>
   );
 }

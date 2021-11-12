@@ -1,38 +1,98 @@
 .App {
   text-align: center;
+  /* background-color: rgb(83, 85, 85); */
+  height: 178px;
+  padding-top: 14px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.github-logo{
+  width: 7%;
+  position: absolute;
+  display: block;
+  margin-left: 104px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-box{
+  padding: 5px;
+  font-size: 27px;
+  margin-top: 33px;
+  margin-bottom: 42px;
+  border: 2px solid black;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.repos{
+  padding: 7px 90px;
+  font-size: 24px;
+  background: rgb(83, 82, 82);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.show-btn{
+  padding: 7px;
+  font-size: 24px;
+  background: black;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .heading{
+  margin-top: 50px;
+} */
+
+.follower-logo{
+  width: 4%;
+  position: absolute;
+  margin-left: -108px;
 }
+.following-logo{
+  width: 2.5%;
+  position: absolute;
+  margin-left: -95px;
+}
+.repo{
+  position: absolute;
+  width: 2.5%;
+  margin-left: -92px;
+  margin-top: 6px;
+}
+.user-logo{
+  width: 4%;
+  position: absolute;
+  margin-top: -15px;
+  margin-left: -63px;
+}
+
+.repo-card{
+  width: 27%;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  background-color: #f1f1f1;
+  margin-top: 30px;
+  margin-left: 72px;
+}
+.all-repo{
+  text-align: start;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+.title-repo{
+  text-align: center;
+}
+
+.repo-url{
+  margin-top: -16px;
+}
+
+/* .copy-logo{
+  width: 5%;
+  margin-left: 10px;
+} */
+
+.copy-icon{
+  margin-left: 15px;
+  cursor: -webkit-grabbing; cursor: grabbing;
+}
+
+/* .navbar{
+  background-color: rgb(73, 62, 62);
+  height: 140px;
+} */
