@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import All_Repos from "./All_Repos";
-import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 
 function Github_data() {
@@ -22,54 +21,60 @@ function Github_data() {
 
     setGitData({ data: respGlobal.data, allRep: allRepos.data });
   };
-  
+
 
   const onSubmit = () => {
     fetchData()
   }
 
-  const repoFunc = ()=>{
-     setrepo(true)
+  const repoFunc = () => {
+    setrepo(true)
   }
-// console.log(resp,"response")
+
   return (
     <div>
       <Router>
-			
+
         <Switch>
           <Route path="/repo">
-              <div><All_Repos allrepo = {resp.allRep} /></div>
+            <div><All_Repos allrepo={resp.allRep} /></div>
           </Route>
-         
+
           <Route path="/">
             <div className='main-container'>
-                <input
-                  className="input-box"
-                  type="text"
-                  onChange={(e) => setusername(e.target.value)}
-                  placeholder="Username..."
-                ></input>
-                <button className="show-btn" onClick={onSubmit}>
-                  Show data
-                </button>
+              <input
+                className="input-box"
+                type="text"
+                onChange={(e) => setusername(e.target.value)}
+                placeholder="Username..."
+                onKeyUp={(e) => {
+                  if (e.keyCode === 13 || e.key === 'Enter') {
+                      e.preventDefault();
+                      onSubmit();
+                  }
+              }}
+              ></input>
+              <button className="show-btn" onClick={onSubmit}>
+                Show data
+              </button>
             </div>
 
-          {resp.data ? (
-          <div>
-              <img src={resp.data.avatar_url}></img>
-              <h1><img className='user-logo' src='https://static.thenounproject.com/png/1081856-200.png' /> &nbsp; {resp.data.login}</h1>
-              <h1 onClick={repoFunc}>
-                <img className='repo' src = "https://static.thenounproject.com/png/198209-200.png" />  &nbsp;<Link to={`/repo?name=${resp.data.login}`}>  {resp.data.public_repos}</Link>
-              </h1>
-              <h1><img className='follower-logo' src='https://image.pngaaa.com/585/4117585-middle.png' /> &nbsp; {resp.data.followers}</h1>
-              <h1><img className='following-logo' src='https://cdn0.iconfinder.com/data/icons/people-lifestyle/100/People-07-512.png' />  &nbsp; {resp.data.following}</h1>
-              
-          </div>
-          ) : (
-            <div></div>
-          )}
+            {resp.data ? (
+              <div>
+                <img src={resp.data.avatar_url}></img>
+                <h1><img className='user-logo' src='https://static.thenounproject.com/png/1081856-200.png' /> &nbsp; {resp.data.login}</h1>
+                <h1 onClick={repoFunc}>
+                  <img className='repo' src="https://static.thenounproject.com/png/198209-200.png" />  &nbsp;<Link to={`/repo?name=${resp.data.login}`}>  {resp.data.public_repos}</Link>
+                </h1>
+                <h1><img className='follower-logo' src='https://image.pngaaa.com/585/4117585-middle.png' /> &nbsp; {resp.data.followers}</h1>
+                <h1><img className='following-logo' src='https://cdn0.iconfinder.com/data/icons/people-lifestyle/100/People-07-512.png' />  &nbsp; {resp.data.following}</h1>
+
+              </div>
+            ) : (
+              <div></div>
+            )}
           </Route>
-          
+
         </Switch>
       </Router>
 

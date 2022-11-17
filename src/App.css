@@ -1,98 +1,165 @@
 .App {
   text-align: center;
-  /* background-color: rgb(83, 85, 85); */
   height: 178px;
   padding-top: 14px;
 }
 
-.github-logo{
+.github-logo {
   width: 7%;
   position: absolute;
   display: block;
   margin-left: 104px;
 }
 
-.input-box{
+.input-box {
   padding: 5px;
   font-size: 27px;
   margin-top: 33px;
   margin-bottom: 42px;
   border: 2px solid black;
 }
-.repos{
+
+.repos {
   padding: 7px 90px;
   font-size: 24px;
   background: rgb(83, 82, 82);
   color: white;
 }
 
-.show-btn{
+.show-btn {
   padding: 7px;
   font-size: 24px;
   background: black;
   color: white;
 }
 
-/* .heading{
-  margin-top: 50px;
-} */
-
-.follower-logo{
+.follower-logo {
   width: 4%;
   position: absolute;
   margin-left: -108px;
 }
-.following-logo{
+
+.following-logo {
   width: 2.5%;
   position: absolute;
   margin-left: -95px;
 }
-.repo{
+
+.repo {
   position: absolute;
   width: 2.5%;
   margin-left: -92px;
   margin-top: 6px;
 }
-.user-logo{
+
+.user-logo {
   width: 4%;
   position: absolute;
   margin-top: -15px;
   margin-left: -63px;
 }
 
-.repo-card{
-  width: 27%;
+.repo-card {
+  width: 30%;
   padding: 10px;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
   background-color: #f1f1f1;
   margin-top: 30px;
-  margin-left: 72px;
+  margin-left: 20px;
 }
-.all-repo{
+
+.all-repo {
   text-align: start;
   display: flex;
   flex-wrap: wrap;
   margin-top: 60px;
 }
-.title-repo{
+
+.title-repo {
   text-align: center;
 }
 
-.repo-url{
+.repo-url {
   margin-top: -16px;
 }
 
-/* .copy-logo{
-  width: 5%;
-  margin-left: 10px;
-} */
-
-.copy-icon{
+.copy-icon {
   margin-left: 15px;
-  cursor: -webkit-grabbing; cursor: grabbing;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
 
-/* .navbar{
-  background-color: rgb(73, 62, 62);
-  height: 140px;
-} */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .heading {
+    font-size: 17px;
+  }
+
+  .input-box {
+    font-size: 20px;
+  }
+
+  .show-btn {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .heading {
+    font-size: 20px;
+  }
+
+  .input-box {
+    font-size: 17px;
+  }
+
+  .show-btn {
+    font-size: 15px;
+  }
+
+  .navbar {
+    margin-top: 40px;
+  }
+
+  .github-logo {
+    margin-left: 173px;
+    top: 18px;
+  }
+
+  .user-logo {
+    margin-top: -11px;
+    margin-left: -54px;
+    width: 15%;
+  }
+
+  .repo {
+    width: 10%;
+  }
+
+  .follower-logo {
+    width: 15%;
+  }
+
+  .following-logo {
+    width: 8%;
+  }
+
+  .repo-card {
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .repos {
+    padding: 7px 75px;
+    font-size: 16px;
+  }
+
+  .repo-url {
+    font-size: 13px;
+    margin-top: -26px;
+  }
+
+  .all-repo {
+    margin-top: 10px;
+  }
+
+}
